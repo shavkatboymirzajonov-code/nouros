@@ -9,13 +9,23 @@ const heroModalClose = document.querySelector(".hero__modal-close");
 const heroModalVideo = document.querySelector(".hero__modal-video");
 const themeButton = document.querySelector(".navbar__theme");
 
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-}
+const updateThemeButton = () => {
+  if (!themeButton) {
+    return;
+  }
+
+  const isDark = document.body.classList.contains("dark-mode");
+  themeButton.setAttribute("aria-pressed", String(isDark));
+  themeButton.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+};
+
+document.body.classList.toggle("dark-mode", localStorage.getItem("theme") === "dark");
+updateThemeButton();
 
 if (themeButton) {
   themeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    updateThemeButton();
 
     if (document.body.classList.contains("dark-mode")) {
       localStorage.setItem("theme", "dark");

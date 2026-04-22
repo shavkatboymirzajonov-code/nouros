@@ -7,6 +7,7 @@
   font-family: Arial, sans-serif;
   color: #222222;
   background: #ffffff;
+  color-scheme: light;
 }
 
 .site-wrapper {
@@ -88,6 +89,15 @@ hr {
   cursor: pointer;
 }
 
+.navbar__theme:focus-visible,
+.navbar__button:focus-visible,
+.hero__button:focus-visible,
+.analytics-showcase__button:focus-visible,
+.applications__button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+}
+
 .navbar__theme-icon {
   position: relative;
   width: 18px;
@@ -133,10 +143,14 @@ hr {
 .site-page__body.dark-mode {
   color: #e5e7eb;
   background: #070b16;
+  color-scheme: dark;
 }
 
 .dark-mode .navbar__link,
 .dark-mode .navbar__button--secondary,
+.dark-mode .hero__button--secondary,
+.dark-mode .analytics-showcase__button--secondary,
+.dark-mode .applications__button,
 .dark-mode .hero__title,
 .dark-mode .analytics-showcase__title,
 .dark-mode .testimonials__title,
@@ -146,12 +160,17 @@ hr {
 .dark-mode .footer-block__column h3,
 .dark-mode .faq-block__question,
 .dark-mode .analytics-showcase__card h3,
-.dark-mode .applications__card h3 {
+.dark-mode .applications__card h3,
+.dark-mode .testimonials__person h3,
+.dark-mode .hero__video-title {
   color: #f8fafc;
 }
 
 .dark-mode .navbar__theme,
 .dark-mode .navbar__button--secondary,
+.dark-mode .hero__button--secondary,
+.dark-mode .analytics-showcase__button--secondary,
+.dark-mode .applications__button,
 .dark-mode .hero__badge,
 .dark-mode .analytics-showcase__badge,
 .dark-mode .applications__badge,
@@ -160,6 +179,7 @@ hr {
 .dark-mode .analytics-showcase__card,
 .dark-mode .applications__card,
 .dark-mode .testimonials__card,
+.dark-mode .hero__video-card,
 .dark-mode .footer-block {
   border-color: #253044;
   background: #0f172a;
@@ -174,6 +194,8 @@ hr {
 .dark-mode .analytics-showcase__card p,
 .dark-mode .applications__card p,
 .dark-mode .testimonials__quote,
+.dark-mode .testimonials__person p,
+.dark-mode .hero__video-text,
 .dark-mode .footer-block__column a,
 .dark-mode .footer-block__bottom p,
 .dark-mode .footer-block__bottom a,
